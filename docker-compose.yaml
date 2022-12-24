@@ -5,6 +5,8 @@ services:
     build: ./docker/elixir
     ports:
       - ${APP_PORT}:4000
+    depends_on:
+      - db
 
   db:
     build: ./docker/postgres

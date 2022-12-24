@@ -1,5 +1,5 @@
 FROM postgres:15
 
-ENV LANG ja_JP.UTF-
+# ENV LANG ja_JP.UTF-8
 
-# COPY ./docker/postgres/*.sql /docker-entrypoint-initdb.d/
+# COPY *.sql /docker-entrypoint-initdb.d/
