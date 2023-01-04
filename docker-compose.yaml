@@ -2,14 +2,19 @@ version: "3"
 
 services:
   app:
-    build: ./docker/elixir
+    build: 
+      context: .
+      dockerfile: ./docker/elixir/Dockerfile
     ports:
       - ${APP_PORT}:4000
     depends_on:
       - db
-
+    volumes:
+      - .:/app
   db:
-    build: ./docker/postgres
+    build: 
+      context: .
+      dockerfile: ./docker/postgres/Dockerfile
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
